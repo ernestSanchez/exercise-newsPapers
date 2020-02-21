@@ -1,0 +1,13 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="card mb-3">
+        <img src="{{_data.contents['articles'][indexArticle]['urlToImage']}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{_data.contents['articles'][indexArticle]['title']}}</h5>
+          <p class="card-text">{{_data.contents['articles'][indexArticle]['content']}}</p>
+          <p class="card-text"><small class="text-muted">{{_data.contents['articles'][indexArticle]['author']}}</small></p>
+          <p class="card-text"><small class="text-muted">{{_data.contents['articles'][indexArticle]['publishedAt']}}</small></p>
+        </div>
+      </div>
+    
+</div>
