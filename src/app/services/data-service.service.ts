@@ -37,7 +37,7 @@ export class DataServiceService {
 // busca lista de articulos filtrado por pais
 inicio(pais){
 
-  this._http.get("http://newsapi.org/v2/top-headlines?country="+pais+"&apiKey=637cef4954134000b5b2b4c6748f15fd")
+  this._http.get("https://newsapi.org/v2/top-headlines?country="+pais+"&apiKey=637cef4954134000b5b2b4c6748f15fd")
   .subscribe((responseApi) => {
     this.contents = responseApi})
     
@@ -45,7 +45,7 @@ inicio(pais){
 
 // busca lista de periodicos
 allPapersNews(){
-  this._http.get("http://newsapi.org/v2/sources?apiKey=637cef4954134000b5b2b4c6748f15fd")
+  this._http.get("https://newsapi.org/v2/sources?apiKey=637cef4954134000b5b2b4c6748f15fd")
       .subscribe((responseAllApi) => {
         this.allPapers = responseAllApi["sources"]
         console.log(this.allPapers)
@@ -54,7 +54,7 @@ allPapersNews(){
 
 //busca lista de articulos filtrado por periodico
 newsByPaper(paper) {
-  this._http.get("http://newsapi.org/v2/sources"+paper+"&apiKey=637cef4954134000b5b2b4c6748f15fd")
+  this._http.get("https://newsapi.org/v2/sources"+paper+"&apiKey=637cef4954134000b5b2b4c6748f15fd")
     .subscribe((responseSearchApi) => {
       this.contents = responseSearchApi
       // console.log(this.contents)
@@ -64,7 +64,7 @@ newsByPaper(paper) {
 // busca lista articulos filtrado por palabra clave
   submitUrl(url) {//<------funcion para hacer otra llamada a la api con otro endpoin dandole un argumrnto para que el valor se lo demos desde el input
 
-    this._http.get("http://newsapi.org/v2/top-headlines?q="+url+"&apiKey=637cef4954134000b5b2b4c6748f15fd")
+    this._http.get("https://newsapi.org/v2/top-headlines?q="+url+"&apiKey=637cef4954134000b5b2b4c6748f15fd")
       .subscribe((responseSearchApi) => {
         this.contents = responseSearchApi
         // console.log(this.contents)
